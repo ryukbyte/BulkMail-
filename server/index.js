@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const nodemailer = require("nodemailer");
 require("dotenv").config();
 
-const Email = require("./models/Email");
+const Email = require("./models/email");
 
 const app = express();
 
