@@ -10,7 +10,7 @@ function App() {
   const [emailHistory, setEmailHistory] = useState([]);
 
   useEffect(() => {
-    fetch("https://bulkmail-xglt.onrender.com/email-history")
+    fetch("http://localhost:5001/email-history")
       .then((response) => response.json())
       .then((data) => setEmailHistory(data))
       .catch((error) => console.log("History Error:", error));
@@ -30,7 +30,7 @@ function App() {
     }
 
     try {
-      const response = await fetch("https://bulkmail-xglt.onrender.com/send-email", {
+      const response = await fetch("http://localhost:5001/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -50,7 +50,7 @@ function App() {
 
       setMessage(data.message);
 
-      const historyResponse = await fetch("https://bulkmail-xglt.onrender.com/email-history");
+      const historyResponse = await fetch("http://localhost:5001/email-history");
       const historyData = await historyResponse.json();
 
       setEmailHistory(historyData);
