@@ -30,7 +30,7 @@ function App() {
     }
 
     try {
-      const response = await fetch("https://bulkmail-xglt.onrender.com", {
+      const response = await fetch("https://bulkmail-xglt.onrender.com/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -50,7 +50,7 @@ function App() {
 
       setMessage(data.message);
 
-      const historyResponse = await fetch("http://localhost:5001/email-history");
+      const historyResponse = await fetch("https://bulkmail-xglt.onrender.com/email-history");
       const historyData = await historyResponse.json();
 
       setEmailHistory(historyData);
